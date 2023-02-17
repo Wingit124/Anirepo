@@ -43,7 +43,6 @@
 		A5CB59BF299DE2750087B3CC = {
 			isa = PBXGroup;
 			children = (
-				A5AB989F299E97E8005A4B28 /* Production-Info.plist */,
 				A5CB59F5299DE47E0087B3CC /* Production */,
 				A5CB59C9299DE2750087B3CC /* Products */,
 				A58F0C0F299DEB8200BAD7E0 /* Frameworks */,
@@ -61,6 +60,7 @@
 		A5CB59F5299DE47E0087B3CC /* Production */ = {
 			isa = PBXGroup;
 			children = (
+				A5AB989F299E97E8005A4B28 /* Production-Info.plist */,
 				A5CB59F6299DE47E0087B3CC /* ProductionApp.swift */,
 				A5CB59FF299DE66E0087B3CC /* Resources */,
 			);
