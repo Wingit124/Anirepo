@@ -5,9 +5,9 @@
       location = "group:AnirepoKit">
    </FileRef>
    <FileRef
-      location = "group:Production.xcodeproj">
+      location = "group:App/Production.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Catalog.xcodeproj">
+      location = "group:App/Catalog.xcodeproj">
    </FileRef>
 </Workspace>

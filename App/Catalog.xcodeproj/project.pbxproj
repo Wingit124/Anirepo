@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5AB98A3299FD447005A4B28 /* Catalog in Frameworks */ = {isa = PBXBuildFile; productRef = A5AB98A2299FD447005A4B28 /* Catalog */; };
 		A5CB5A28299DE85E0087B3CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CB5A23299DE85E0087B3CC /* Assets.xcassets */; };
 		A5CB5A29299DE85E0087B3CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CB5A25299DE85E0087B3CC /* Preview Assets.xcassets */; };
 		A5CB5A2A299DE85E0087B3CC /* CatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB5A26299DE85E0087B3CC /* CatalogApp.swift */; };
-		A5CB5A2B299DE85E0087B3CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB5A27299DE85E0087B3CC /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +18,6 @@
 		A5CB5A23299DE85E0087B3CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5CB5A25299DE85E0087B3CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5CB5A26299DE85E0087B3CC /* CatalogApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogApp.swift; sourceTree = "<group>"; };
-		A5CB5A27299DE85E0087B3CC /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +25,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AB98A3299FD447005A4B28 /* Catalog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5AB98A1299FD447005A4B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A5CB5A00299DE76B0087B3CC = {
 			isa = PBXGroup;
 			children = (
 				A5CB5A21299DE85E0087B3CC /* Catalog */,
 				A5CB5A0A299DE76B0087B3CC /* Products */,
+				A5AB98A1299FD447005A4B28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,11 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				A5CB5A26299DE85E0087B3CC /* CatalogApp.swift */,
-				A5CB5A27299DE85E0087B3CC /* ContentView.swift */,
 				A5CB5A22299DE85E0087B3CC /* Resources */,
 			);
-			name = Catalog;
-			path = App/Catalog;
+			path = Catalog;
 			sourceTree = "<group>";
 		};
 		A5CB5A22299DE85E0087B3CC /* Resources */ = {
@@ -92,6 +98,9 @@
 			dependencies = (
 			);
 			name = Catalog;
+			packageProductDependencies = (
+				A5AB98A2299FD447005A4B28 /* Catalog */,
+			);
 			productName = Catalog;
 			productReference = A5CB5A09299DE76B0087B3CC /* Catalog.app */;
 			productType = "com.apple.product-type.application";
@@ -146,7 +155,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5CB5A2B299DE85E0087B3CC /* ContentView.swift in Sources */,
 				A5CB5A2A299DE85E0087B3CC /* CatalogApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +283,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"App/Catalog/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Catalog/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 92KBMJ4M4S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -304,7 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"App/Catalog/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Catalog/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 92KBMJ4M4S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -348,6 +356,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A5AB98A2299FD447005A4B28 /* Catalog */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Catalog;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A5CB5A01299DE76B0087B3CC /* Project object */;
 }

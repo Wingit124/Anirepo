@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CatalogApp
 
 @main
 struct CatalogApp: App {
