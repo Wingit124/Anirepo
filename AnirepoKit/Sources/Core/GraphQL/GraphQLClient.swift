@@ -7,9 +7,9 @@
 
 import Foundation
 
-public class Network {
+public class GraphQLClient {
     
-    public static let shared: Network = .init()
+    public static let shared: GraphQLClient = .init()
     
     private init() {}
     

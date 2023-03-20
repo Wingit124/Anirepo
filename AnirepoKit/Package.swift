@@ -19,7 +19,10 @@ let package = Package(
             targets: ["CatalogApp"]),
     ],
     dependencies: [
-        
+        .package(
+            url: "https://github.com/apollographql/apollo-ios.git",
+            .upToNextMajor(from: "1.0.0")
+        ),
     ],
     targets: [
         //Apps
@@ -78,20 +81,11 @@ let package = Package(
         
         //Core
         .target(
-            name: "NetworkCore",
+            name: "GraphQLCore",
             dependencies: [
-                
+                .product(name: "Apollo", package: "apollo-ios"),
             ],
-            path: "./Sources/Core/Network"),
-        
-        //Tools
-        .target(
-            name: "Tools",
-            dependencies: [
-                
-            ],
-            path: "./Sources/Tools"),
-
+            path: "./Sources/Core/GraphQL"),
 
 
     ]
