@@ -7,9 +7,8 @@
 
 import SwiftUI
 import Routing
-import TimelineFeature
-import RecordFeature
 import SearchFeature
+import WorkDetailFeature
 
 @MainActor
 struct RouteProvider: RoutingProvider {
@@ -19,8 +18,10 @@ struct RouteProvider: RoutingProvider {
     @ViewBuilder
     func route(for target: any Routing) -> some View {
         switch target {
-        case _ as Routings.Timeline:
-            EmptyView()
+        case _ as Routings.Search:
+            SearchScreen()
+        case let workDetail as Routings.WorkDetail:
+            WorkDetailScreen(annictId: workDetail.annictId)
         default:
             Text("unknown routing: \(String(describing: target))")
         }
@@ -34,25 +35,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 public struct ContentView: View {
     
-    @UIApplicationDelegateAdaptor var appDelegate: AppDelegate
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    @StateObject private var navigation = Navigation()
     
     public init() {}
     
     public var body: some View {
-        TabView{
-            TimelineScreen()
-                .tabItem {
-                    Image(systemName: "1.circle.fill")
-                }
-            RecordListScreen()
-                .tabItem {
-                    Image(systemName: "2.circle.fill")
-                }
+        NavigationStack(path: $navigation.path) {
             SearchScreen()
-                .tabItem {
-                    Image(systemName: "3.circle.fill")
+                .navigationDestination(for: Routings.Search.self) { search in
+                    appDelegate.router.route(for: search)
+                }
+                .navigationDestination(for: Routings.WorkDetail.self) { workDetail in
+                    appDelegate.router.route(for: workDetail)
                 }
         }
+        .environment(\.navigation, navigation)
         .environment(\.router, appDelegate.router)
     }
     

@@ -18,6 +18,7 @@ public protocol RoutingProvider {
 }
 
 public struct Router: Sendable {
+    
     let router: @Sendable @MainActor (any Routing) -> AnyView
 
     @MainActor

@@ -1,0 +1,80 @@
+query WorkDetail($annictIds: [Int!]!) {
+  searchWorks (
+        annictIds: $annictIds,
+        first: 1
+    ) {
+        edges {
+            node {
+                annictId
+                title
+                titleEn
+                titleKana
+                seasonYear
+                seasonName
+                media
+                episodesCount
+                officialSiteUrl
+                wikipediaUrl
+                wikipediaUrlEn
+                twitterUsername
+                twitterHashtag
+                watchersCount
+                reviewsCount
+                image {
+                    recommendedImageUrl
+                    copyright
+                }
+                seriesList {
+                    edges {
+                        node {
+                            works {
+                                edges {
+                                    item {
+                                        annictId
+                                        title
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                episodes (
+                    orderBy: { field: SORT_NUMBER, direction: ASC}
+                ) {
+                    edges {
+                        node {
+                            number
+                            numberText
+                            title
+                            satisfactionRate
+                        }
+                    }
+                }
+                casts {
+                    edges {
+                        node {
+                            annictId
+                            name
+                            nameEn
+                            character {
+                                name
+                                nameEn
+                            }
+                        }
+                    }
+                }
+                staffs(
+                    orderBy: { field: SORT_NUMBER, direction: DESC}
+                ) {
+                    edges {
+                        node {
+                            name
+                            roleText
+                            roleOther
+                        }
+                    }
+                }
+            }
+        }
+  }
+}

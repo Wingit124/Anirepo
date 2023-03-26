@@ -6,13 +6,40 @@
 //
 
 import SwiftUI
+import Routing
+import SearchData
 
 public struct SearchScreen: View {
     
-    public init() {}
+    @Environment(\.navigation) var navigation
+    
+    @StateObject private var viewModel: SearchViewModel<ApolloSearchRepository>
+    
+    public init() {
+        self._viewModel = StateObject(wrappedValue: SearchViewModel())
+    }
     
     public var body: some View {
-        Text("Search")
+        SearchView(
+            works: viewModel.works,
+            rowSelected: { annictId in
+                rowSelected(annictId: annictId)
+            }
+        )
+        .navigationTitle("Search")
+        .searchable(
+            text: $viewModel.searchTerm,
+            placement: .navigationBarDrawer(displayMode: .always)
+        )
+        .onSubmit(of: .search) {
+            viewModel.onSubmit()
+        }
+    }
+}
+
+extension SearchScreen {
+    func rowSelected(annictId: Int) {
+        navigation.push(to: .workDetail(annictId: annictId))
     }
 }
 

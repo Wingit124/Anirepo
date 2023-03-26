@@ -33,6 +33,7 @@ public extension Annict {
       switch typename {
       case "Query": return Annict.Objects.Query
       case "WorkConnection": return Annict.Objects.WorkConnection
+      case "WorkEdge": return Annict.Objects.WorkEdge
       case "Work": return Annict.Objects.Work
       case "Activity": return Annict.Objects.Activity
       case "Cast": return Annict.Objects.Cast
@@ -53,6 +54,16 @@ public extension Annict {
       case "Status": return Annict.Objects.Status
       case "User": return Annict.Objects.User
       case "WorkImage": return Annict.Objects.WorkImage
+      case "SeriesConnection": return Annict.Objects.SeriesConnection
+      case "SeriesEdge": return Annict.Objects.SeriesEdge
+      case "SeriesWorkConnection": return Annict.Objects.SeriesWorkConnection
+      case "SeriesWorkEdge": return Annict.Objects.SeriesWorkEdge
+      case "EpisodeConnection": return Annict.Objects.EpisodeConnection
+      case "EpisodeEdge": return Annict.Objects.EpisodeEdge
+      case "CastConnection": return Annict.Objects.CastConnection
+      case "CastEdge": return Annict.Objects.CastEdge
+      case "StaffConnection": return Annict.Objects.StaffConnection
+      case "StaffEdge": return Annict.Objects.StaffEdge
       default: return nil
       }
     }

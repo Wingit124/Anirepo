@@ -1,14 +1,17 @@
-query SearchWorks($seasons: [String!]) {
-  searchWorks (
+query SearchWorks($titles: [String!]! $seasons: [String!]!) {
+    searchWorks (
+        titles: $titles,
         seasons: $seasons,
         orderBy: { field: WATCHERS_COUNT, direction: DESC }
     ) {
-        nodes {
-            annictId
-            title
-            image {
-                recommendedImageUrl
+        edges {
+            node {
+                annictId
+                title
+                image {
+                    recommendedImageUrl
+                }
             }
         }
-  }
+    }
 }

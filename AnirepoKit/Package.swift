@@ -30,9 +30,8 @@ let package = Package(
             name: "ProductionApp",
             dependencies: [
                 "Routing",
-                "TimelineFeature",
-                "RecordFeature",
                 "SearchFeature",
+                "WorkDetailFeature",
             ],
             path: "./Sources/Apps/Production"),
         .target(
@@ -44,31 +43,31 @@ let package = Package(
         
         //Features
         .target(
-            name: "TimelineFeature",
-            dependencies: [
-                
-            ],
-            path: "./Sources/Features/Timeline"),
-        .target(
-            name: "RecordFeature",
-            dependencies: [
-                
-            ],
-            path: "./Sources/Features/Record"),
-        .target(
             name: "SearchFeature",
             dependencies: [
-                
+                "SearchData"
             ],
             path: "./Sources/Features/Search"),
+        .target(
+            name: "WorkDetailFeature",
+            dependencies: [
+                "WorkDetailData"
+            ],
+            path: "./Sources/Features/WorkDetail"),
         
         //Data
         .target(
-            name: "AuthData",
+            name: "SearchData",
             dependencies: [
-                
+                "GraphQLCore"
             ],
-            path: "./Sources/Data/Auth"),
+            path: "./Sources/Data/Search"),
+        .target(
+            name: "WorkDetailData",
+            dependencies: [
+                "GraphQLCore"
+            ],
+            path: "./Sources/Data/WorkDetail"),
 
         
         //Routing
